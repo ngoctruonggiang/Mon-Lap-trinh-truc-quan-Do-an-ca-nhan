@@ -48,6 +48,9 @@
             UploadImageButton = new Button();
             CancelButton = new Button();
             AddButton = new Button();
+            openFileDialogStudentImage = new OpenFileDialog();
+            labelID = new Label();
+            textBoxID = new TextBox();
             ((System.ComponentModel.ISupportInitialize)PictureBox).BeginInit();
             GenderGroupBox.SuspendLayout();
             SuspendLayout();
@@ -58,7 +61,7 @@
             FirstNameLable.BackColor = Color.FromArgb(255, 192, 192);
             FirstNameLable.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FirstNameLable.ForeColor = Color.Black;
-            FirstNameLable.Location = new Point(89, 57);
+            FirstNameLable.Location = new Point(89, 102);
             FirstNameLable.Name = "FirstNameLable";
             FirstNameLable.Size = new Size(140, 23);
             FirstNameLable.TabIndex = 0;
@@ -66,7 +69,7 @@
             // 
             // FirstNameTextBox
             // 
-            FirstNameTextBox.Location = new Point(249, 53);
+            FirstNameTextBox.Location = new Point(249, 98);
             FirstNameTextBox.Name = "FirstNameTextBox";
             FirstNameTextBox.Size = new Size(283, 27);
             FirstNameTextBox.TabIndex = 1;
@@ -77,18 +80,19 @@
             LastNameLable.AutoSize = true;
             LastNameLable.BackColor = Color.FromArgb(255, 224, 192);
             LastNameLable.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LastNameLable.Location = new Point(94, 131);
+            LastNameLable.Location = new Point(95, 176);
             LastNameLable.Name = "LastNameLable";
             LastNameLable.Size = new Size(135, 23);
             LastNameLable.TabIndex = 2;
             LastNameLable.Text = "Last Name :";
+            LastNameLable.Click += LastNameLable_Click;
             // 
             // BirthDateLable
             // 
             BirthDateLable.AutoSize = true;
             BirthDateLable.BackColor = Color.FromArgb(255, 255, 192);
             BirthDateLable.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BirthDateLable.Location = new Point(95, 206);
+            BirthDateLable.Location = new Point(95, 249);
             BirthDateLable.Name = "BirthDateLable";
             BirthDateLable.Size = new Size(134, 23);
             BirthDateLable.TabIndex = 3;
@@ -100,7 +104,7 @@
             GenderLable.AutoSize = true;
             GenderLable.BackColor = Color.FromArgb(192, 255, 192);
             GenderLable.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            GenderLable.Location = new Point(131, 279);
+            GenderLable.Location = new Point(131, 321);
             GenderLable.Name = "GenderLable";
             GenderLable.Size = new Size(98, 23);
             GenderLable.TabIndex = 4;
@@ -112,7 +116,7 @@
             PhoneNumberLable.AutoSize = true;
             PhoneNumberLable.BackColor = Color.FromArgb(192, 255, 255);
             PhoneNumberLable.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PhoneNumberLable.Location = new Point(54, 353);
+            PhoneNumberLable.Location = new Point(54, 402);
             PhoneNumberLable.Name = "PhoneNumberLable";
             PhoneNumberLable.Size = new Size(175, 23);
             PhoneNumberLable.TabIndex = 5;
@@ -143,7 +147,7 @@
             // 
             // LastNameTextBox
             // 
-            LastNameTextBox.Location = new Point(249, 127);
+            LastNameTextBox.Location = new Point(249, 172);
             LastNameTextBox.Name = "LastNameTextBox";
             LastNameTextBox.Size = new Size(283, 27);
             LastNameTextBox.TabIndex = 8;
@@ -151,7 +155,7 @@
             // 
             // PhoneTextBox
             // 
-            PhoneTextBox.Location = new Point(249, 349);
+            PhoneTextBox.Location = new Point(249, 398);
             PhoneTextBox.Name = "PhoneTextBox";
             PhoneTextBox.Size = new Size(283, 27);
             PhoneTextBox.TabIndex = 10;
@@ -172,13 +176,14 @@
             PictureBox.Location = new Point(811, 234);
             PictureBox.Name = "PictureBox";
             PictureBox.Size = new Size(283, 191);
+            PictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             PictureBox.TabIndex = 12;
             PictureBox.TabStop = false;
             PictureBox.Click += PictureBox_Click;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(249, 206);
+            dateTimePicker1.Location = new Point(249, 245);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(283, 27);
             dateTimePicker1.TabIndex = 13;
@@ -188,7 +193,7 @@
             // 
             GenderGroupBox.Controls.Add(FemaleRadioButton);
             GenderGroupBox.Controls.Add(MaleRadioButton);
-            GenderGroupBox.Location = new Point(249, 239);
+            GenderGroupBox.Location = new Point(249, 282);
             GenderGroupBox.Name = "GenderGroupBox";
             GenderGroupBox.Size = new Size(221, 78);
             GenderGroupBox.TabIndex = 14;
@@ -255,6 +260,28 @@
             AddButton.UseVisualStyleBackColor = false;
             AddButton.Click += AddButton_Click;
             // 
+            // openFileDialogStudentImage
+            // 
+            openFileDialogStudentImage.FileName = "openFileDialogStudentImage";
+            // 
+            // labelID
+            // 
+            labelID.AutoSize = true;
+            labelID.BackColor = Color.FromArgb(128, 255, 255);
+            labelID.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelID.Location = new Point(179, 53);
+            labelID.Name = "labelID";
+            labelID.Size = new Size(50, 23);
+            labelID.TabIndex = 18;
+            labelID.Text = "ID :";
+            // 
+            // textBoxID
+            // 
+            textBoxID.Location = new Point(249, 49);
+            textBoxID.Name = "textBoxID";
+            textBoxID.Size = new Size(283, 27);
+            textBoxID.TabIndex = 19;
+            // 
             // AddStudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -263,6 +290,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(1186, 721);
+            Controls.Add(textBoxID);
+            Controls.Add(labelID);
             Controls.Add(AddButton);
             Controls.Add(CancelButton);
             Controls.Add(UploadImageButton);
@@ -303,7 +332,7 @@
         private Label AddressLable;
         private Label PictureLable;
         private TextBox LastNameTextBox;
-        private TextBox textBox1;
+        private TextBox textBoxID;
         private TextBox PhoneTextBox;
         private TextBox AddressTextBox;
         private PictureBox PictureBox;
@@ -314,5 +343,7 @@
         private Button UploadImageButton;
         private Button CancelButton;
         private Button AddButton;
+        private OpenFileDialog openFileDialogStudentImage;
+        private Label labelID;
     }
 }

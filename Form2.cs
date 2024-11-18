@@ -54,7 +54,17 @@ namespace WinForms_Student_Managed_app
 
         private void UploadImageButton_Click(object sender, EventArgs e)
         {
-
+            //Thiet lap thuoc tinh cho openFileDialog
+            openFileDialogStudentImage.Filter = "File hinh anh (*.png, *.jpeg, *.jpg) | *.png; *.jpeg; *.jpg";
+            openFileDialogStudentImage.Title = "Chon anh sinh vien";
+            //Hien thi openFileDialog
+            if (openFileDialogStudentImage.ShowDialog() == DialogResult.OK)
+            {
+                //Lay duong dan den file hinh anh
+                string shinhAnh = openFileDialogStudentImage.FileName;
+                //Chep duong dan hinh anh nay vao picture box
+                PictureBox.Image = Image.FromFile(shinhAnh);
+            }
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -83,6 +93,11 @@ namespace WinForms_Student_Managed_app
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LastNameLable_Click(object sender, EventArgs e)
         {
 
         }
