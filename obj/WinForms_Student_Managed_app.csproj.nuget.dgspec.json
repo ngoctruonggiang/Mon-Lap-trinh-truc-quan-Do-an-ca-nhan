@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Tai lieu mon hoc 2024\\Lập trình trực quan\\Do an thuc hanh cuoi ky\\WinForms_Student_Managed_app\\WinForms_Student_Managed_app\\WinForms_Student_Managed_app.csproj": {}
+  },
+  "projects": {
+    "D:\\Tai lieu mon hoc 2024\\Lập trình trực quan\\Do an thuc hanh cuoi ky\\WinForms_Student_Managed_app\\WinForms_Student_Managed_app\\WinForms_Student_Managed_app.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Tai lieu mon hoc 2024\\Lập trình trực quan\\Do an thuc hanh cuoi ky\\WinForms_Student_Managed_app\\WinForms_Student_Managed_app\\WinForms_Student_Managed_app.csproj",
+        "projectName": "WinForms_Student_Managed_app",
+        "projectPath": "D:\\Tai lieu mon hoc 2024\\Lập trình trực quan\\Do an thuc hanh cuoi ky\\WinForms_Student_Managed_app\\WinForms_Student_Managed_app\\WinForms_Student_Managed_app.csproj",
+        "packagesPath": "C:\\Users\\lamda\\.nuget\\packages\\",
+        "outputPath": "D:\\Tai lieu mon hoc 2024\\Lập trình trực quan\\Do an thuc hanh cuoi ky\\WinForms_Student_Managed_app\\WinForms_Student_Managed_app\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lamda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
