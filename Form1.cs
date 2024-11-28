@@ -22,5 +22,11 @@ namespace WinForms_Student_Managed_app
             AddStudentForm addStudentForm = new AddStudentForm();
             addStudentForm.Show();
         }
+
+        private void studentsListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormStudentsList studentsList = new FormStudentsList();
+            studentsList.Show();
+        }
     }
 }

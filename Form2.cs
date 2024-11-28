@@ -12,6 +12,7 @@ namespace WinForms_Student_Managed_app
 {
     public partial class AddStudentForm : Form
     {
+        string duongDanHinhAnh;
         public AddStudentForm()
         {
             InitializeComponent();
@@ -52,7 +53,7 @@ namespace WinForms_Student_Managed_app
 
         }
 
-        private void UploadImageButton_Click(object sender, EventArgs e)
+        public void UploadImageButton_Click(object sender, EventArgs e)
         {
             //Thiet lap thuoc tinh cho openFileDialog
             openFileDialogStudentImage.Filter = "File hinh anh (*.png, *.jpeg, *.jpg) | *.png; *.jpeg; *.jpg";
@@ -61,17 +62,66 @@ namespace WinForms_Student_Managed_app
             if (openFileDialogStudentImage.ShowDialog() == DialogResult.OK)
             {
                 //Lay duong dan den file hinh anh
-                string shinhAnh = openFileDialogStudentImage.FileName;
+                duongDanHinhAnh = openFileDialogStudentImage.FileName;
                 //Chep duong dan hinh anh nay vao picture box
-                PictureBox.Image = Image.FromFile(shinhAnh);
+                PictureBox.Image = Image.FromFile(duongDanHinhAnh);
             }
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            //add new student
+            Student student = new Student();
+            ExcelHelper updateExcel = new ExcelHelper();
+            string id = textBoxID.Text;
+            string fname = FirstNameTextBox.Text;
+            string lname = LastNameTextBox.Text;
+            DateTime bdate = dateTimePicker1.Value;
+            string phone = PhoneTextBox.Text;
+            string address = AddressTextBox.Text;
+            string gender = "Male";
+            if(FemaleRadioButton.Checked) 
+            { gender = "Female"; }
+            //we need to check the age of the student
+            //the student age must be over 18
+            int born_year = dateTimePicker1.Value.Year;
+            int this_year = DateTime.Now.Year;
 
+            if(this_year - born_year < 18) 
+            {
+                MessageBox.Show("Invalid, The student age must be over 18");
+            }
+            else if(verif() == true) 
+            {
+                student.id = id;
+                student.firstName = fname;
+                student.lastName = lname;
+                student.birthDate = bdate;
+                student.gender = gender;
+                student.phoneNumber = phone;
+                student.address = address;
+                student.picture = duongDanHinhAnh;
+                updateExcel.ThemSinhVienVaoExcel("D:\\Tai lieu mon hoc 2024\\Lập trình trực quan\\Do an thuc hanh cuoi ky\\" +
+                    "WinForms_Student_Managed_app\\WinForms_Student_Managed_app\\data_SinhVien.xlsx", student);
+                MessageBox.Show("Student have been added to Excel");
+           
+            }
+            else { MessageBox.Show("Invalid, Because lack of student information"); }
         }
 
+        //create a funtion to verify data
+        bool verif()
+        {
+            if ((FirstNameTextBox.Text.Trim() == " ") ||
+                (LastNameTextBox.Text.Trim() == " ") ||
+                (PhoneTextBox.Text.Trim() == " ") ||
+                (AddressTextBox.Text.Trim() == " ") ||
+                (PictureBox.Image == null))
+            {
+                return false;
+            }
+            else { return true; }
+        }
         private void LastNameTextBox_TextChanged(object sender, EventArgs e)
         {
 

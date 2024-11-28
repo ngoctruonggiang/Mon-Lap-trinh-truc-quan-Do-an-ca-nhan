@@ -79,6 +79,7 @@
             studentsListToolStripMenuItem.Name = "studentsListToolStripMenuItem";
             studentsListToolStripMenuItem.Size = new Size(333, 28);
             studentsListToolStripMenuItem.Text = "Students List";
+            studentsListToolStripMenuItem.Click += studentsListToolStripMenuItem_Click;
             // 
             // statusToolStripMenuItem
             // 
