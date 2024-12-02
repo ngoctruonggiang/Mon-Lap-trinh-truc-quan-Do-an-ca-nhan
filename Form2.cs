@@ -144,7 +144,7 @@ namespace WinForms_Student_Managed_app
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void LastNameLable_Click(object sender, EventArgs e)

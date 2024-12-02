@@ -15,15 +15,15 @@ namespace WinForms_Student_Managed_app
 {
     public partial class FormStudentsList : Form
     {
-        public string FilePath = @"D:\Tai lieu mon hoc 2024\Lap trinh truc quan\Do an thuc hanh cuoi ky\Du Lieu Sinh Vien.xlsx";
+        public string FilePath = @"D:\Tai lieu mon hoc 2024\Lập trình trực quan\Do an thuc hanh cuoi ky\WinForms_Student_Managed_app\WinForms_Student_Managed_app\data_SinhVien.xlsx";
 
         public FormStudentsList()
         {
             InitializeComponent();
-            FormStudentsList_Load();
+            this.Load += new EventHandler(FormStudentsList_Load);
         }
 
-        public void FormStudentsList_Load()
+        private void FormStudentsList_Load(object sender, EventArgs e)
         {
             try
             {
@@ -37,9 +37,27 @@ namespace WinForms_Student_Managed_app
             }
         }
 
-        private void dataGridViewListStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+        private void dataGridViewListStudents_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormEditAndRemove formEditAndRemove = new FormEditAndRemove();
+            formEditAndRemove.textBoxID.Text = dataGridViewListStudents.CurrentRow.Cells[0].Value.ToString();
+            formEditAndRemove.FirstNameTextBox.Text = dataGridViewListStudents.CurrentRow.Cells[1].Value.ToString();
+            formEditAndRemove.LastNameTextBox.Text = dataGridViewListStudents.CurrentRow.Cells[2].Value.ToString();
+            formEditAndRemove.dateTimePicker1.Value = (DateTime)dataGridViewListStudents.CurrentRow.Cells[3].Value;
+            //gender
+            if (dataGridViewListStudents.CurrentRow.Cells[4].Value.ToString() == "Female")
+            {
+                formEditAndRemove.FemaleRadioButton.Checked = true;
+            }
+            formEditAndRemove.PhoneTextBox.Text = dataGridViewListStudents.CurrentRow.Cells[5].Value.ToString();
+            formEditAndRemove.AddressTextBox.Text = dataGridViewListStudents.CurrentRow.Cells[6].Value.ToString();
+            string duongDanHinhAnh;
+            duongDanHinhAnh = dataGridViewListStudents.CurrentRow.Cells[7].Value.ToString();
+            //Lay duong dan den file hinh anh
+            formEditAndRemove.PictureBox.Image = Image.FromFile(duongDanHinhAnh);
+            //Chep duong dan hinh anh nay vao picture box
+            formEditAndRemove.Show();
         }
     }
 }
