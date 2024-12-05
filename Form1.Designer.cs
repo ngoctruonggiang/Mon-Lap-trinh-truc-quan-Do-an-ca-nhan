@@ -96,6 +96,7 @@
             editRemoveToolStripMenuItem.Name = "editRemoveToolStripMenuItem";
             editRemoveToolStripMenuItem.Size = new Size(333, 28);
             editRemoveToolStripMenuItem.Text = "Edit / Remove";
+            editRemoveToolStripMenuItem.Click += editRemoveToolStripMenuItem_Click;
             // 
             // manageStudentsFormToolStripMenuItem
             // 

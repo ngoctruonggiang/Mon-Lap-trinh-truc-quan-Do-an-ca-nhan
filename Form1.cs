@@ -28,5 +28,11 @@ namespace WinForms_Student_Managed_app
             FormStudentsList studentsList = new FormStudentsList();
             studentsList.Show();
         }
+
+        private void editRemoveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEditAndRemove formER = new FormEditAndRemove();
+            formER.Show();
+        }
     }
 }

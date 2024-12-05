@@ -41,6 +41,7 @@ namespace WinForms_Student_Managed_app
         private void dataGridViewListStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormEditAndRemove formEditAndRemove = new FormEditAndRemove();
+            formEditAndRemove.dongHT = dataGridViewListStudents.CurrentCell.RowIndex;
             formEditAndRemove.textBoxID.Text = dataGridViewListStudents.CurrentRow.Cells[0].Value.ToString();
             formEditAndRemove.FirstNameTextBox.Text = dataGridViewListStudents.CurrentRow.Cells[1].Value.ToString();
             formEditAndRemove.LastNameTextBox.Text = dataGridViewListStudents.CurrentRow.Cells[2].Value.ToString();
@@ -56,6 +57,7 @@ namespace WinForms_Student_Managed_app
             duongDanHinhAnh = dataGridViewListStudents.CurrentRow.Cells[7].Value.ToString();
             //Lay duong dan den file hinh anh
             formEditAndRemove.PictureBox.Image = Image.FromFile(duongDanHinhAnh);
+            formEditAndRemove.linkHinhAnh = duongDanHinhAnh.Trim();
             //Chep duong dan hinh anh nay vao picture box
             formEditAndRemove.Show();
         }

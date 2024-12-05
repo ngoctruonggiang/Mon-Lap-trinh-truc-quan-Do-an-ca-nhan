@@ -30,7 +30,7 @@
         {
             textBoxID = new TextBox();
             openFileDialogStudentImage = new OpenFileDialog();
-            AddButton = new Button();
+            ButtonEdit = new Button();
             RemoveButton = new Button();
             UploadImageButton = new Button();
             FemaleRadioButton = new RadioButton();
@@ -69,16 +69,17 @@
             // 
             openFileDialogStudentImage.FileName = "openFileDialogStudentImage";
             // 
-            // AddButton
+            // ButtonEdit
             // 
-            AddButton.BackColor = Color.LawnGreen;
-            AddButton.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AddButton.Location = new Point(635, 651);
-            AddButton.Name = "AddButton";
-            AddButton.Size = new Size(169, 39);
-            AddButton.TabIndex = 36;
-            AddButton.Text = "Edit";
-            AddButton.UseVisualStyleBackColor = false;
+            ButtonEdit.BackColor = Color.LawnGreen;
+            ButtonEdit.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ButtonEdit.Location = new Point(635, 651);
+            ButtonEdit.Name = "ButtonEdit";
+            ButtonEdit.Size = new Size(169, 39);
+            ButtonEdit.TabIndex = 36;
+            ButtonEdit.Text = "Edit";
+            ButtonEdit.UseVisualStyleBackColor = false;
+            ButtonEdit.Click += ButtonEdit_Click_1;
             // 
             // RemoveButton
             // 
@@ -278,12 +279,13 @@
             // 
             buttonFind.BackColor = Color.Violet;
             buttonFind.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonFind.Location = new Point(457, 604);
+            buttonFind.Location = new Point(36, 30);
             buttonFind.Name = "buttonFind";
-            buttonFind.Size = new Size(347, 41);
+            buttonFind.Size = new Size(140, 32);
             buttonFind.TabIndex = 39;
             buttonFind.Text = "Find";
             buttonFind.UseVisualStyleBackColor = false;
+            buttonFind.Click += buttonFind_Click;
             // 
             // fileSystemWatcher1
             // 
@@ -301,7 +303,7 @@
             ClientSize = new Size(1186, 721);
             Controls.Add(buttonFind);
             Controls.Add(textBoxID);
-            Controls.Add(AddButton);
+            Controls.Add(ButtonEdit);
             Controls.Add(RemoveButton);
             Controls.Add(UploadImageButton);
             Controls.Add(labelID);
@@ -331,7 +333,7 @@
 
         #endregion
         private OpenFileDialog openFileDialogStudentImage;
-        private Button AddButton;
+        private Button ButtonEdit;
         private Button RemoveButton;
         private Label labelID;
         private Label PictureLable;
