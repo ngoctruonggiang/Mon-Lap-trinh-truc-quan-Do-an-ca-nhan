@@ -92,6 +92,7 @@
             RemoveButton.TabIndex = 35;
             RemoveButton.Text = "Remove";
             RemoveButton.UseVisualStyleBackColor = false;
+            RemoveButton.Click += RemoveButton_Click;
             // 
             // UploadImageButton
             // 

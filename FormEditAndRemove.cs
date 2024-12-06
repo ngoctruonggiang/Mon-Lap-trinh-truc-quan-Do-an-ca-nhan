@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -81,8 +82,47 @@ namespace WinForms_Student_Managed_app
 
         private void buttonFind_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(textBoxID.Text);
+            string ID = this.textBoxID.Text;
+            // Xac dinh dong can tim
+            FileInfo file = new FileInfo(linkFileEX);
+            using (ExcelPackage package = new ExcelPackage(file)) 
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+                for (int i = 2; i <= worksheet.Dimension.End.Row; i++)
+                {
+                    if (worksheet.Cells[i, 1].Value.ToString() == ID)
+                    {
+                        dongHT = i - 2;
+                        break;
+                    }
+                }
+                this.textBoxID.Text = ID;
+                this.FirstNameTextBox.Text = worksheet.Cells[dongHT + 2, 2].Value.ToString();
+                this.LastNameTextBox.Text = worksheet.Cells[dongHT + 2, 3].Value.ToString();
+                this.dateTimePicker1.Value = (DateTime)worksheet.Cells[dongHT, 4].Value;
+                if (worksheet.Cells[dongHT + 2, 4].Value.ToString() == "Male")
+                {
+                    this.MaleRadioButton.Checked = true;
+                }
+                else 
+                {
+                    this.FemaleRadioButton.Checked = true;
+                }
+                
+            }
 
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            FileInfo file = new FileInfo(linkFileEX);
+            using (ExcelPackage package = new ExcelPackage(file))
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+                worksheet.DeleteRow(dongHT + 2); //do dongHT la cua datagridview bat dau tu 0 con excel bat dau tu 1, +1 ghi ten cot
+                MessageBox.Show("Da xoa dong" + (dongHT + 2).ToString() + "trong excel");
+                package.Save();
+            }
         }
     }
 }
