@@ -84,6 +84,7 @@ namespace WinForms_Student_Managed_app
         {
             string ID = this.textBoxID.Text;
             // Xac dinh dong can tim
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             FileInfo file = new FileInfo(linkFileEX);
             using (ExcelPackage package = new ExcelPackage(file)) 
             {
@@ -99,8 +100,8 @@ namespace WinForms_Student_Managed_app
                 this.textBoxID.Text = ID;
                 this.FirstNameTextBox.Text = worksheet.Cells[dongHT + 2, 2].Value.ToString();
                 this.LastNameTextBox.Text = worksheet.Cells[dongHT + 2, 3].Value.ToString();
-                this.dateTimePicker1.Value = (DateTime)worksheet.Cells[dongHT, 4].Value;
-                if (worksheet.Cells[dongHT + 2, 4].Value.ToString() == "Male")
+                this.dateTimePicker1.Value = (DateTime)worksheet.Cells[dongHT + 2, 4].Value;
+                if (worksheet.Cells[dongHT + 2, 5].Value.ToString() == "Male")
                 {
                     this.MaleRadioButton.Checked = true;
                 }
@@ -108,7 +109,11 @@ namespace WinForms_Student_Managed_app
                 {
                     this.FemaleRadioButton.Checked = true;
                 }
-                
+                this.PhoneTextBox.Text = worksheet.Cells[dongHT + 2, 6].Value.ToString();
+                this.AddressTextBox.Text = worksheet.Cells[dongHT + 2, 7].Value.ToString();
+                //dongHT la thuoc tinh cua datagridview ma dong cua datagridview bat dau tu 0 ma excel bat dau tu 1 ma dong dau trong excel la ten thuoc tinh
+                linkHinhAnh = worksheet.Cells[dongHT + 2, 8].Value.ToString();
+                this.PictureBox.Image = Image.FromFile(linkHinhAnh);
             }
 
         }
