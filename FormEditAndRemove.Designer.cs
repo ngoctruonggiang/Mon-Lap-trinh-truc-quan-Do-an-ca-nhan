@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditAndRemove));
             textBoxID = new TextBox();
             openFileDialogStudentImage = new OpenFileDialog();
             ButtonEdit = new Button();
@@ -322,6 +323,7 @@
             Controls.Add(LastNameLable);
             Controls.Add(FirstNameTextBox);
             Controls.Add(FirstNameLable);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormEditAndRemove";
             Text = "FormEditAndRemove";
             GenderGroupBox.ResumeLayout(false);

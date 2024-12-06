@@ -36,3 +36,4 @@ D:\Tai lieu mon hoc 2024\Lập trình trực quan\Do an thuc hanh cuoi ky\WinFor
 D:\Tai lieu mon hoc 2024\Lập trình trực quan\Do an thuc hanh cuoi ky\WinForms_Student_Managed_app\WinForms_Student_Managed_app\obj\Debug\net8.0-windows\WinForms.A531330F.Up2Date
 D:\Tai lieu mon hoc 2024\Lập trình trực quan\Do an thuc hanh cuoi ky\WinForms_Student_Managed_app\WinForms_Student_Managed_app\obj\Debug\net8.0-windows\WinForms_Student_Managed_app.FormStudentsList.resources
 D:\Tai lieu mon hoc 2024\Lập trình trực quan\Do an thuc hanh cuoi ky\WinForms_Student_Managed_app\WinForms_Student_Managed_app\obj\Debug\net8.0-windows\WinForms_Student_Managed_app.FormEditAndRemove.resources
+D:\Tai lieu mon hoc 2024\Lập trình trực quan\Do an thuc hanh cuoi ky\WinForms_Student_Managed_app\WinForms_Student_Managed_app\obj\Debug\net8.0-windows\WinForms_Student_Managed_app.FormStatistics.resources

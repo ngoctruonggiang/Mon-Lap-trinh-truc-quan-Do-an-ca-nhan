@@ -33,7 +33,7 @@
             studentToolStripMenuItem = new ToolStripMenuItem();
             addNewStudentToolStripMenuItem = new ToolStripMenuItem();
             studentsListToolStripMenuItem = new ToolStripMenuItem();
-            statusToolStripMenuItem = new ToolStripMenuItem();
+            statisticsToolStripMenuItem = new ToolStripMenuItem();
             editRemoveToolStripMenuItem = new ToolStripMenuItem();
             manageStudentsFormToolStripMenuItem = new ToolStripMenuItem();
             printToolStripMenuItem = new ToolStripMenuItem();
@@ -55,7 +55,7 @@
             // studentToolStripMenuItem
             // 
             studentToolStripMenuItem.BackColor = Color.Bisque;
-            studentToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addNewStudentToolStripMenuItem, studentsListToolStripMenuItem, statusToolStripMenuItem, editRemoveToolStripMenuItem, manageStudentsFormToolStripMenuItem, printToolStripMenuItem });
+            studentToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addNewStudentToolStripMenuItem, studentsListToolStripMenuItem, statisticsToolStripMenuItem, editRemoveToolStripMenuItem, manageStudentsFormToolStripMenuItem, printToolStripMenuItem });
             studentToolStripMenuItem.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             studentToolStripMenuItem.Name = "studentToolStripMenuItem";
             studentToolStripMenuItem.Size = new Size(105, 27);
@@ -81,13 +81,14 @@
             studentsListToolStripMenuItem.Text = "Students List";
             studentsListToolStripMenuItem.Click += studentsListToolStripMenuItem_Click;
             // 
-            // statusToolStripMenuItem
+            // statisticsToolStripMenuItem
             // 
-            statusToolStripMenuItem.BackColor = Color.FromArgb(192, 255, 192);
-            statusToolStripMenuItem.ForeColor = SystemColors.HotTrack;
-            statusToolStripMenuItem.Name = "statusToolStripMenuItem";
-            statusToolStripMenuItem.Size = new Size(333, 28);
-            statusToolStripMenuItem.Text = "Status";
+            statisticsToolStripMenuItem.BackColor = Color.FromArgb(192, 255, 192);
+            statisticsToolStripMenuItem.ForeColor = SystemColors.HotTrack;
+            statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
+            statisticsToolStripMenuItem.Size = new Size(333, 28);
+            statisticsToolStripMenuItem.Text = "Statistics";
+            statisticsToolStripMenuItem.Click += statisticsToolStripMenuItem_Click;
             // 
             // editRemoveToolStripMenuItem
             // 
@@ -158,7 +159,7 @@
         private ToolStripMenuItem scoreToolStripMenuItem;
         private ToolStripMenuItem addNewStudentToolStripMenuItem;
         private ToolStripMenuItem studentsListToolStripMenuItem;
-        private ToolStripMenuItem statusToolStripMenuItem;
+        private ToolStripMenuItem statisticsToolStripMenuItem;
         private ToolStripMenuItem editRemoveToolStripMenuItem;
         private ToolStripMenuItem manageStudentsFormToolStripMenuItem;
         private ToolStripMenuItem printToolStripMenuItem;

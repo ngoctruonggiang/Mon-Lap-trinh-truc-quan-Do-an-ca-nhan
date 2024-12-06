@@ -34,5 +34,11 @@ namespace WinForms_Student_Managed_app
             FormEditAndRemove formER = new FormEditAndRemove();
             formER.Show();
         }
+
+        private void statisticsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormStatistics thongKe = new FormStatistics();
+            thongKe.Show();
+        }
     }
 }
