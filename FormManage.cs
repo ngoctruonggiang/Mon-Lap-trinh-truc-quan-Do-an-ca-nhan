@@ -162,21 +162,30 @@ namespace WinForms_Student_Managed_app
             using (ExcelPackage package = new ExcelPackage(file))
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets[0]; // Lấy sheet đầu tiên
+                string IDSua = this.textBoxID.Text;
+                int dongSua;
+                for (dongSua = worksheet.Dimension.Start.Row; dongSua < worksheet.Dimension.End.Row; dongSua++)
+                {
+                    if (worksheet.Cells[dongSua, 1].Value.ToString() == IDSua)
+                    {
+                        break;
+                    }
+                }
                 //Cap nhat cac o trong excel bang thong tin trong textbox khi nhap vao FormEditAndRemove
-                worksheet.Cells[dongClick + 2, 1].Value = this.textBoxID.Text;
-                worksheet.Cells[dongClick + 2, 2].Value = this.textBoxFirstName.Text;
-                worksheet.Cells[dongClick + 2, 3].Value = this.textBoxLastName.Text;
-                worksheet.Cells[dongClick + 2, 4].Value = this.dateTimePickerBirthDay.Value;
+                worksheet.Cells[dongSua, 1].Value = this.textBoxID.Text;
+                worksheet.Cells[dongSua, 2].Value = this.textBoxFirstName.Text;
+                worksheet.Cells[dongSua, 3].Value = this.textBoxLastName.Text;
+                worksheet.Cells[dongSua, 4].Value = this.dateTimePickerBirthDay.Value;
                 if (this.radioButtonMale.Checked == true)
                 {
-                    worksheet.Cells[dongClick + 2, 5].Value = "Male";
+                    worksheet.Cells[dongSua, 5].Value = "Male";
                 }
-                else { worksheet.Cells[dongClick + 2, 5].Value = "Female"; }
-                worksheet.Cells[dongClick + 2, 6].Value = this.textBoxPhone.Text;
-                worksheet.Cells[dongClick + 2, 7].Value = this.textBoxAddress.Text;
+                else { worksheet.Cells[dongSua, 5].Value = "Female"; }
+                worksheet.Cells[dongSua, 6].Value = this.textBoxPhone.Text;
+                worksheet.Cells[dongSua, 7].Value = this.textBoxAddress.Text;
                 //Lay duong dan hinh anh ban dau hoac sau khi click upload button
-                worksheet.Cells[dongClick + 2, 8].Value = this.duongDanHinhAnh;
-                MessageBox.Show("dong bi thay doi trong excel la: " + (dongClick + 2).ToString());
+                worksheet.Cells[dongSua, 8].Value = this.duongDanHinhAnh;
+                MessageBox.Show("dong bi thay doi trong excel la: " + (dongSua).ToString());
 
                 // Lưu file Excel
                 package.Save();
