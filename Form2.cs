@@ -68,7 +68,7 @@ namespace WinForms_Student_Managed_app
             }
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
+        public void AddButton_Click(object sender, EventArgs e)
         {
             //add new student
             Student student = new Student();
@@ -93,6 +93,7 @@ namespace WinForms_Student_Managed_app
             }
             else if(verif() == true) 
             {
+                //tao doi tuong student voi cac thuoc tinh 
                 student.id = id;
                 student.firstName = fname;
                 student.lastName = lname;
@@ -101,6 +102,7 @@ namespace WinForms_Student_Managed_app
                 student.phoneNumber = phone;
                 student.address = address;
                 student.picture = duongDanHinhAnh;
+                //Goi ham ThemSinhVienVaoExcel trong excelHelper de chuyen thong tin cua doi tuong student nay vao trong excel 
                 updateExcel.ThemSinhVienVaoExcel("D:\\Tai lieu mon hoc 2024\\Lập trình trực quan\\Do an thuc hanh cuoi ky\\" +
                     "WinForms_Student_Managed_app\\WinForms_Student_Managed_app\\data_SinhVien.xlsx", student);
                 MessageBox.Show("Student have been added to Excel");

@@ -106,6 +106,7 @@
             manageStudentsFormToolStripMenuItem.Name = "manageStudentsFormToolStripMenuItem";
             manageStudentsFormToolStripMenuItem.Size = new Size(333, 28);
             manageStudentsFormToolStripMenuItem.Text = "Manage Students Form";
+            manageStudentsFormToolStripMenuItem.Click += manageStudentsFormToolStripMenuItem_Click;
             // 
             // printToolStripMenuItem
             // 

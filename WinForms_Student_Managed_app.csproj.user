@@ -10,6 +10,9 @@
     <Compile Update="FormEditAndRemove.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormStatistics.cs">
       <SubType>Form</SubType>
     </Compile>

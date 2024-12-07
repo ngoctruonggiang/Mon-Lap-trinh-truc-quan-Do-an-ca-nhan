@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Packaging;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -51,13 +53,19 @@ namespace WinForms_Student_Managed_app
                         soSVNu++;
                     }
                     else { }
+                    //tinh ty le nam, nu
+                    tyLeNam = soSVNam * 100 / tongSinhVien;
+                    tyLeNu = soSVNu * 100 / tongSinhVien;
+                    labelTotalStudents.Text = "Tong so sinh vien: " + tongSinhVien.ToString();
+                    labelMaleRatio.Text = "% Nam : " + tyLeNam.ToString() + " %";
+                    labelFemaleRatio.Text = "% Nu : " + tyLeNu.ToString() + " %";
+                    ExcelWorksheet worksheet1 = package.Workbook.Worksheets[1];
+                    worksheet1.Cells[2, 1].Value = tongSinhVien;
+                    worksheet1.Cells[2,2].Value = tyLeNam;
+                    worksheet1.Cells[2, 3].Value = tyLeNu;
+
                 }
-                //tinh ty le nam, nu
-                tyLeNam = soSVNam * 100 / tongSinhVien;
-                tyLeNu = soSVNu * 100 / tongSinhVien;
-                labelTotalStudents.Text = "Tong so sinh vien: " + tongSinhVien.ToString();
-                labelMaleRatio.Text = "% Nam : " + tyLeNam.ToString() + " %";
-                labelFemaleRatio.Text = "% Nu : " + tyLeNu.ToString() + " %";
+                package.Save();
             }
         }
     }

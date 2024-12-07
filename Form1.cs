@@ -40,5 +40,11 @@ namespace WinForms_Student_Managed_app
             FormStatistics thongKe = new FormStatistics();
             thongKe.Show();
         }
+
+        private void manageStudentsFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormManage formManage = new FormManage();
+            formManage.Show();
+        }
     }
 }
