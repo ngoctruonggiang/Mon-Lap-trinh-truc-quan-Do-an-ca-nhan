@@ -15,6 +15,7 @@ namespace WinForms_Student_Managed_app
     {
         int dongClick;
         string duongDanHinhAnh;
+        string IDBeforeEdit;//Trong truong hop sua ID thi biet la dong muon sua la dong co ID truoc khi sua
         public FormManage()
         {
             InitializeComponent();
@@ -52,6 +53,7 @@ namespace WinForms_Student_Managed_app
             dongClick = dataGridViewManage.CurrentCell.RowIndex;
             //MessageBox.Show("dong hien tai la: " + dongClick.ToString());
             this.textBoxID.Text = dataGridViewManage.CurrentRow.Cells[0].Value.ToString();
+            IDBeforeEdit = this.textBoxID.Text;
             this.textBoxFirstName.Text = dataGridViewManage.CurrentRow.Cells[1].Value.ToString();
             this.textBoxLastName.Text = dataGridViewManage.CurrentRow.Cells[2].Value.ToString();
             this.dateTimePickerBirthDay.Value = (DateTime)dataGridViewManage.CurrentRow.Cells[3].Value;
@@ -162,11 +164,10 @@ namespace WinForms_Student_Managed_app
             using (ExcelPackage package = new ExcelPackage(file))
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets[0]; // Lấy sheet đầu tiên
-                string IDSua = this.textBoxID.Text;
                 int dongSua;
                 for (dongSua = worksheet.Dimension.Start.Row; dongSua < worksheet.Dimension.End.Row; dongSua++)
                 {
-                    if (worksheet.Cells[dongSua, 1].Value.ToString() == IDSua)
+                    if (worksheet.Cells[dongSua, 1].Value.ToString() == IDBeforeEdit)
                     {
                         break;
                     }
